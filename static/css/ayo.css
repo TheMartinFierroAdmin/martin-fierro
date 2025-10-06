@@ -1,3 +1,95 @@
 body{
     background-color:rgb(92, 67, 141)
 }
+
+.ayo{
+    display: flex;
+    flex-direction: row;
+    float: left;
+    margin: 0 auto; /* Sets top/bottom margin to 0 and left/right to auto */
+    width: 100%
+}
+
+.hijodeputa{
+    background-color: rgba(241, 241, 241, 0.747);
+    flex-direction: column; /* Stacks items vertically */
+    border-radius: 30px;
+    margin: 0 auto; /* Sets top/bottom margin to 0 and left/right to auto */
+    width: 50%; /* Or any specific width */
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    height: 300px;
+}
+
+.mierda{
+    background-color: rgba(178, 95, 242, 1);
+    padding: 5px;
+    border-radius: 15px;
+    font-family: 'Courier New', Courier, monospace ;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 500px;
+    font-style: italic;
+    margin-left: 70px;
+    text-align: center;
+    height: 40px;
+    color: rgb(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.mierda2{
+    border-radius: 15px;
+    font-family: 'Courier New', Courier, monospace ;
+    font-size: 3em;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 500px;
+    font-style: italic;
+    margin-left: 70px;
+    text-align: center;
+    height: 20px;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.container {
+  display: flex;
+  
+}
+
+.textbos{
+    padding: 10px;
+    background-color: rgb(240, 238, 245);
+    border-radius: 15px;
+    font-family: 'Courier New', Courier, monospace ;
+    font-size: 2em;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 500px;
+    font-style: italic;
+    margin-left: 70px;
+    text-align: center;
+    height: 60px;
+    color: rgba(0, 0, 0, 0.87);
+    margin-top: 30px;
+}
+
+.boton{
+    padding: 10px;
+    background-color: rgb(240, 238, 245);
+    border-radius: 15px;
+    font-family: 'Courier New', Courier, monospace ;
+    font-size: 3em;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 500px;
+    font-style: italic;
+    margin-left: 70px;
+    text-align: center;
+    height: 40px;
+    color: rgba(0, 0, 0, 0.87);
+}
