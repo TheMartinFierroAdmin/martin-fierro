@@ -78,6 +78,23 @@ a{
     margin-top: 30px;
 }
 
+.textBOX{
+    padding: 10px;
+    background-color: rgb(240, 238, 245);
+    border-radius: 15px;
+    font-family: 'Courier New', Courier, monospace ;
+    font-size: 2em;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 500px;
+    font-style: italic;
+    margin-left: 70px;
+    text-align: center;
+    height: 60px;
+    color: rgba(0, 0, 0, 0.87);
+    margin-top: 30px;
+}
+
 .boton{
     padding: 10px;
     background-color: rgb(240, 238, 245);
@@ -92,4 +109,16 @@ a{
     text-align: center;
     height: 40px;
     color: rgba(0, 0, 0, 0.87);
+}
+
+.main{
+   background-color: rgba(241, 241, 241, 0.747);
+    flex-direction: column; /* Stacks items vertically */
+    border-radius: 30px;
+    margin: 0 auto; /* Sets top/bottom margin to 0 and left/right to auto */
+    width: 50%; /* Or any specific width */
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    height: 300px;
 }
