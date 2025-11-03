@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>asdfnfsadji</title>
-    <link href="../static/css/ayo.css" rel="stylesheet" >
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='../static/css/ayo.css') }}">
 </head>
 
+<img src="{{ url_for('static', filename='img/imagen.jpg') }}">
 <body>
-    <a href="./index.html"><img src="../static/img/volver.png" height="40" width="40" class="imglol"></a>
+    <a href="./index.html"><img src="{{ url_for('static', filename='../static/img/volver.png') }}" height="40" width="40" class="imglol"></a>
     <div class="main">
         <div class="headerlol">
             <input type="text" class="textBOX">
