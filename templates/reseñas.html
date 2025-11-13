@@ -19,6 +19,15 @@
                 <h1 class="ilovefemboys">
                    LOL
                 </h1>
+                <table>
+                    {% for titulo in peliculas %}
+                    <tr>
+                    {% for calificación in reseñas %}
+                    <td>{{calificación}}</td>
+                    {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
                 
             </div>
         </div>

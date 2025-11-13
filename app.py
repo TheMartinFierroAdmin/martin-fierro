@@ -14,6 +14,11 @@ app = Flask(__name__)
 
 nombre = "Martin Fierro"
 
+def listar_clientes():
+    query = "SELECT * FROM Reviews"
+    cursor.execute(query)
+    reviews = cursor.fetchall()
+
 
 
 
@@ -29,7 +34,10 @@ def menu2():
 
 @app.route('/reseñas.html')
 def resenas():
-    return render_template('reseñas.html')
+    query = "SELECT usuarios.nombre_usuario, reseñas.calificación, reseñas.comentario, reseñas.fecha_resena FROM reseñas JOIN usuarios usuarios ON reseñas.id_usuario = usuarios.id_usuari o WHERE reseñas.id_pelicula = 1;"
+    cursor.execute(query)
+    reseñas = cursor.fetchall()
+    return render_template('reseñas.html', reseñas=reseñas)
 
 @app.route('/index.html')
 def index():
