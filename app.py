@@ -34,7 +34,16 @@ def mis_reseñas():
 
 
 
-
-
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+import mysql.connector
+# Conexión a la base de datos
+conexion = mysql.connector.connect(
+host="localhost",
+user="usuario",
+password="root",
+database="nombre_base_de_datos"
+)
+cursor = conexion.cursor()
