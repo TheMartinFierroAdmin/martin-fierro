@@ -42,8 +42,8 @@ import mysql.connector
 # Conexión a la base de datos
 conexion = mysql.connector.connect(
 host="localhost",
-user="usuario",
+user="root",
 password="root",
-database="nombre_base_de_datos"
+database="pagina_peliculas"
 )
 cursor = conexion.cursor()
