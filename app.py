@@ -1,8 +1,23 @@
 from flask import Flask, render_template
 
+import mysql.connector
+# Conexión a la base de datos
+conexion = mysql.connector.connect(
+host="localhost",
+user="root",
+password="root",
+database="pagina_peliculas"
+)
+cursor = conexion.cursor()
+
 app = Flask(__name__)
 
 nombre = "Martin Fierro"
+
+
+
+
+
 
 @app.route('/')
 def home():
@@ -38,12 +53,3 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 
-import mysql.connector
-# Conexión a la base de datos
-conexion = mysql.connector.connect(
-host="localhost",
-user="root",
-password="root",
-database="pagina_peliculas"
-)
-cursor = conexion.cursor()
