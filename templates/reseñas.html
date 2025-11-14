@@ -14,15 +14,23 @@
             <input type="text" class="textBOX">
             <div class="ordenlol">
                 <table>
-                    {% for titulo in peliculas %}
-                    <tr>
-                    {% for calificación in reseñas %}
-                    <td>{{calificación}}</td>
-                    {% endfor %}
-                    </tr>
-                    {% endfor %}
+                    <thead>  <!-- Opcional: agrega encabezados para claridad -->
+                        <tr>
+                            <th>Película</th>
+                            <th>Comentario</th>
+                            <th>Calificación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for titulo, comentario, calificación in reseñas_data %}
+                        <tr>
+                            <td>{{ titulo }}</td>
+                            <td>{{ comentario }}</td>
+                            <td>{{ calificación }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
                 </table>
-
             </div>
         </div>
     </div>

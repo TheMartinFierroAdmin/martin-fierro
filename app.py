@@ -6,7 +6,7 @@ conexion = mysql.connector.connect(
 host="localhost",
 user="root",
 password="root",
-database="pagina_peliculas"
+database="pagina_peliculas2"
 )
 cursor = conexion.cursor()
 
@@ -32,25 +32,20 @@ def home():
 def menu2():
     return render_template('menu2.html')
 
-@app.route('/reseñas.html')  # Nueva ruta para la tabla
+@app.route('/reseñas.html')
 def peliculas_reseñas():
-    # Consulta todas las películas
-    cursor.execute("SELECT id_pelicula, titulo FROM peliculas")
-    peliculas_data = cursor.fetchall()  # Lista de tuplas: [(id, titulo), ...]
+    # Consulta que une películas y reseñas para obtener título, comentario y calificación
+    query = """
+    SELECT p.titulo, r.comentario, r.calificación
+    FROM peliculas p
+    JOIN reseñas r ON p.id_pelicula = r.id_pelicula
+    ORDER BY p.titulo  # Opcional: ordena por título de película
+    """
+    cursor.execute(query)
+    reseñas_data = cursor.fetchall()  # Lista de tuplas: [(titulo, comentario, calif), ...]
     
-    # Para cada película, obtener sus calificaciones
-    reseñas = []
-    for pelicula in peliculas_data:
-        id_pelicula = pelicula[0]
-        cursor.execute("SELECT calificación FROM reseñas WHERE id_pelicula = %s", (id_pelicula,))
-        calificaciones = cursor.fetchall()  # Lista de tuplas: [(calif,), ...]
-        # Convierte a lista simple de floats
-        reseñas.append([calif[0] for calif in calificaciones])
-    
-    # Extrae solo los títulos para el template
-    peliculas = [p[1] for p in peliculas_data]
-    
-    return render_template('reseñas.html', peliculas=peliculas, reseñas=reseñas)
+    return render_template('reseñas.html', reseñas_data=reseñas_data)
+
 
 @app.route('/index.html')
 def index():
