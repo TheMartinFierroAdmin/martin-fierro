@@ -32,12 +32,25 @@ def home():
 def menu2():
     return render_template('menu2.html')
 
-@app.route('/reseñas.html')
-def resenas():
-    query = "SELECT usuarios.nombre_usuario, reseñas.calificación, reseñas.comentario, reseñas.fecha_resena FROM reseñas JOIN usuarios usuarios ON reseñas.id_usuario = usuarios.id_usuari o WHERE reseñas.id_pelicula = 1;"
-    cursor.execute(query)
-    reseñas = cursor.fetchall()
-    return render_template('reseñas.html', reseñas=reseñas)
+@app.route('/reseñas.html')  # Nueva ruta para la tabla
+def peliculas_reseñas():
+    # Consulta todas las películas
+    cursor.execute("SELECT id_pelicula, titulo FROM peliculas")
+    peliculas_data = cursor.fetchall()  # Lista de tuplas: [(id, titulo), ...]
+    
+    # Para cada película, obtener sus calificaciones
+    reseñas = []
+    for pelicula in peliculas_data:
+        id_pelicula = pelicula[0]
+        cursor.execute("SELECT calificación FROM reseñas WHERE id_pelicula = %s", (id_pelicula,))
+        calificaciones = cursor.fetchall()  # Lista de tuplas: [(calif,), ...]
+        # Convierte a lista simple de floats
+        reseñas.append([calif[0] for calif in calificaciones])
+    
+    # Extrae solo los títulos para el template
+    peliculas = [p[1] for p in peliculas_data]
+    
+    return render_template('reseñas.html', peliculas=peliculas, reseñas=reseñas)
 
 @app.route('/index.html')
 def index():

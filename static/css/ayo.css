@@ -168,3 +168,20 @@ a{
     color: rgb(255, 255, 255, 0.8);
     text-decoration: none;
 }
+
+ table {
+         border-collapse: collapse;
+         width: 100%;
+         background-color: rgba(241, 241, 241, 0.747); /* Igual que .ordenlol */
+         border-radius: 15px; /* Para que coincida con otros elementos */
+     }
+     td, th {
+         border: 1px solid rgb(92, 67, 141); /* Color del fondo */
+         padding: 8px;
+         color: rgba(0, 0, 0, 0.87); /* Texto negro */
+     }
+     th {
+         background-color: rgba(178, 95, 242, 0.5); /* Como .ilovefemboys */
+         color: white;
+}
+     
